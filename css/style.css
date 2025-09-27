@@ -5,6 +5,23 @@ body {
   background: radial-gradient(ellipse at 60% 30%, #22203a 0%, #0e1013 70%);
   color: #fff;
 }
+/* Example: For phones */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 /* NAVIGATION STYLES */
 nav {
@@ -459,3 +476,4 @@ html {
   background: #14407c;
   transform: scale(1.1);
 }
+
