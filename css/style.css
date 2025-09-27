@@ -1,3 +1,4 @@
+/* ========== GLOBAL ========== */
 body {
   margin: 0;
   font-family: "Montserrat", Arial, sans-serif;
@@ -5,25 +6,18 @@ body {
   background: radial-gradient(ellipse at 60% 30%, #22203a 0%, #0e1013 70%);
   color: #fff;
 }
-/* Example: For phones */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-    padding: 10px;
-  }
 
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-/* NAVIGATION STYLES */
+/* Make images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== NAVIGATION ========== */
 nav {
   display: flex;
   justify-content: flex-start;
@@ -36,6 +30,7 @@ nav .nav-links {
   display: flex;
   gap: 2.5vw;
   align-items: center;
+  flex-wrap: wrap;
 }
 nav .nav-links a {
   color: #fff;
@@ -73,7 +68,7 @@ nav .nav-links a:hover {
   transform: translateY(-2px) scale(1.05);
 }
 
-/* MAIN SECTION */
+/* ========== MAIN SECTION ========== */
 .main-section {
   max-width: 1200px;
   margin: 50px auto 0 auto;
@@ -133,7 +128,6 @@ nav .nav-links a:hover {
   letter-spacing: 0.01em;
   text-align: left;
   width: 100%;
-  white-space: normal;
 }
 .tool-tags {
   display: flex;
@@ -166,6 +160,7 @@ nav .nav-links a:hover {
   gap: 20px;
   align-items: center;
   margin-top: 2px;
+  flex-wrap: wrap;
 }
 .work-btn, .contact-btn {
   display: flex;
@@ -184,7 +179,6 @@ nav .nav-links a:hover {
   background: linear-gradient(90deg, rgba(120,183,255,0.18) 0%, rgba(163,113,255,0.21) 100%);
   border: 1.5px solid rgba(120,183,255,0.20);
   transition: border 0.14s, background 0.14s, filter 0.14s, transform 0.13s;
-  position: relative;
 }
 .work-btn:hover, .contact-btn:hover {
   border: 1.5px solid #70fdff;
@@ -238,26 +232,10 @@ nav .nav-links a:hover {
   animation: ripple-wave 2.6s infinite cubic-bezier(0.17,0.67,0.83,0.67);
   z-index: 1;
 }
-.profile-wave:nth-child(2) {
-  width: 320px;
-  height: 320px;
-  animation-delay: 0.6s;
-}
-.profile-wave:nth-child(3) {
-  width: 350px;
-  height: 350px;
-  animation-delay: 1.2s;
-}
-.profile-wave:nth-child(4) {
-  width: 380px;
-  height: 380px;
-  animation-delay: 1.8s;
-}
-.profile-wave:nth-child(5) {
-  width: 410px;
-  height: 410px;
-  animation-delay: 2.2s;
-}
+.profile-wave:nth-child(2) { width: 320px; height: 320px; animation-delay: 0.6s; }
+.profile-wave:nth-child(3) { width: 350px; height: 350px; animation-delay: 1.2s; }
+.profile-wave:nth-child(4) { width: 380px; height: 380px; animation-delay: 1.8s; }
+.profile-wave:nth-child(5) { width: 410px; height: 410px; animation-delay: 2.2s; }
 
 @keyframes ripple-wave {
   0%   { opacity: 0.8; transform: translate(-50%, -50%) scale(0.7);}
@@ -265,7 +243,7 @@ nav .nav-links a:hover {
   100% { opacity: 0; transform: translate(-50%, -50%) scale(1.09);}
 }
 
-/* FOOTER SECTION */
+/* ========== FOOTER ========== */
 .footer-section {
   background: linear-gradient(135deg, #1a1d29 0%, #2d1b4e 100%);
   border-top: 1px solid #3a3d49;
@@ -337,7 +315,7 @@ nav .nav-links a:hover {
   margin: 0;
 }
 
-/* Copy button and tooltip for footer contact */
+/* Copy button tooltip */
 .copy-btn {
   position: relative;
   margin-left: 6px;
@@ -350,9 +328,7 @@ nav .nav-links a:hover {
   display: inline-flex;
   align-items: center;
 }
-.copy-btn:focus {
-  outline: 2px solid #30e0ff;
-}
+.copy-btn:focus { outline: 2px solid #30e0ff; }
 .tooltip-copy {
   visibility: hidden;
   background: #30333c;
@@ -374,93 +350,13 @@ nav .nav-links a:hover {
   opacity: 1;
 }
 
-/* Responsive tweaks for smaller screens */
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-bottom: 24px;
-  }
-  .footer-section {
-    padding: 26px 0 13px 0;
-  }
-}
-@media (max-width: 600px) {
-  .footer-bubble {
-    font-size: 0.85rem;
-    padding: 4px 9px;
-    margin: 3px 0;
-  }
-}
-@media (max-width: 1000px) {
-  .main-section {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 44px;
-  }
-  .right-column {
-    align-items: flex-start;
-  }
-  .profile-wave-frame {
-    margin-left: 0;
-  }
-}
-@media (max-width: 700px) {
-  nav {
-    padding: 20px 2vw 0 2vw;
-  }
-  .main-section {
-    padding: 0 2vw;
-    gap: 30px;
-  }
-  .hero-title {
-    font-size: 2rem;
-    padding: 6px 10px;
-  }
-  .hero-headline {
-    font-size: 1em;
-  }
-  .hero-desc {
-    font-size: 0.99em;
-  }
-  .buttons-row {
-    flex-direction: column;
-    gap: 13px;
-  }
-  .profile-photo {
-    width: 160px;
-    height: 160px;
-  }
-  .profile-wave-frame {
-    width: 200px;
-    height: 200px;
-  }
-  .profile-wave:nth-child(2) {
-    width: 180px;
-    height: 180px;
-  }
-  .profile-wave:nth-child(3) {
-    width: 200px;
-    height: 200px;
-  }
-  .profile-wave:nth-child(4) {
-    width: 220px;
-    height: 220px;
-  }
-  .profile-wave:nth-child(5) {
-    width: 240px;
-    height: 240px;
-  }
-}
-html {
-  scroll-behavior: smooth;
-}
+/* ========== SCROLL TO TOP ========== */
 #scrollTopBtn {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 1000; /* On top of everything */
+  z-index: 1000;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -477,3 +373,60 @@ html {
   transform: scale(1.1);
 }
 
+/* ========== RESPONSIVE FIXES ========== */
+@media (max-width: 1000px) {
+  .main-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    text-align: center;
+  }
+  .left-column {
+    align-items: center;
+  }
+  .hero-title, .hero-headline, .hero-desc {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 20px 4vw;
+    gap: 10px;
+  }
+  .contact-nav-btn {
+    margin-left: 0;
+  }
+  .buttons-row {
+    flex-direction: column;
+    gap: 13px;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+  .profile-wave-frame {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-title { font-size: 1.8rem; padding: 6px 12px; }
+  .hero-headline { font-size: 1rem; }
+  .hero-desc { font-size: 0.95rem; }
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+  .profile-wave-frame {
+    width: 180px;
+    height: 180px;
+  }
+}
