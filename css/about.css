@@ -11,6 +11,23 @@
   color: #e2e7ea;
   font-family: "Montserrat", Arial, sans-serif;
 }
+/* Example: For phones */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 .about-me-summary {
   background: #171c2c;
@@ -400,3 +417,4 @@
     min-width: unset;
   }
 }
+
